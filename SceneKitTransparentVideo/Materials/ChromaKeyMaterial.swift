@@ -80,17 +80,14 @@ public class ChromaKeyMaterial: SCNMaterial {
     private func didSetBackgroundColor() {
         let rgb = backgroundColor.cgColor.components!.map{Float($0)}
         let vector = SCNVector3(x: rgb[0], y: rgb[1], z: rgb[2])
-        let value = NSValue(scnVector3: vector)
-        setValue(value, forKey: "c_colorToReplace")
+        setValue(vector, forKey: "c_colorToReplace")
     }
     
     private func didSetSmoothing() {
-        let value = NSNumber(value: smoothing)
-        setValue(value, forKey: "c_smoothing")
+        setValue(smoothing, forKey: "c_smoothing")
     }
     
     private func didSetThresholdSensitivity() {
-        let value = NSNumber(value: thresholdSensitivity)
-        setValue(value, forKey: "c_thresholdSensitivity")
+        setValue(thresholdSensitivity, forKey: "c_thresholdSensitivity")
     }
 }
